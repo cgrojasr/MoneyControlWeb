@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class MetaPrincipalItemComponent {
   @Input() metaPrincipalItem: MetaPrincipalItem = {
-    id_meta: 0, nombre: '', monto: 0, porcentaje_avance:0
+    id_meta: 0, nombre: '', monto: 0, porcentaje_avance:0, url_image:''
   }
 
   /**
@@ -20,7 +20,7 @@ export class MetaPrincipalItemComponent {
   ) {
   }
 
-  btnDetalle_click():void{
-    this.router.navigateByUrl('meta/detalle')
+  btnDetalle_click(id_meta: number):void{
+    this.router.navigateByUrl('meta/detalle/'+id_meta)
   }
 }

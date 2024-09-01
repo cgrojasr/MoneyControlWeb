@@ -2,5 +2,6 @@ export interface MetaPrincipalItem {
     id_meta: number,
     nombre: string,
     monto: number,
-    porcentaje_avance: number
+    porcentaje_avance: number,
+    url_image: string
 }

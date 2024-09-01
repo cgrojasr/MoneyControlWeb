@@ -26,7 +26,7 @@ const routes: Routes = [
       }
       ,
       {
-        path: 'detalle',
+        path: 'detalle/:id_meta',
         component: MetaDetalleComponent
       }
     ]
