@@ -1,0 +1,14 @@
+<div class="row mt-2">
+    <div class="col-10">
+        <h2>Tus metas planificadas</h2>
+    </div>
+    <div class="col-2">
+        <button class="btn btn-primary">Registrar Meta</button>
+    </div>
+</div>
+<!-- Cada row equivale a 12 col  -->
+<div class="row mt-2">
+    <div class="col-4" *ngFor="let metaItem of metaPrincipalItems">
+        <app-meta-principal-item [metaPrincipalItem]="metaItem"></app-meta-principal-item>
+    </div>
+</div>

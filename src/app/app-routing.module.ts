@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'meta',
+    pathMatch: 'full'
+  },
+  {
+    path: 'meta',
+    loadChildren: ()=>import('./meta/meta.module').then(m=>m.MetaModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
