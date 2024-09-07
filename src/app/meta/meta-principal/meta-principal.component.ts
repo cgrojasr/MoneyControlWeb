@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaPrincipalItem } from '../../models/meta-principal-item';
 import { MetaService } from '../../services/meta/meta.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-meta-principal',
@@ -37,6 +38,7 @@ export class MetaPrincipalComponent implements OnInit {
   // ]
 
   constructor(
+    private router:Router,
     private metaService: MetaService
   ) {
   }
@@ -47,5 +49,9 @@ export class MetaPrincipalComponent implements OnInit {
         this.metaPrincipalItems = result
       }
     )
+  }
+
+  btnRegistrar_OnClick():void{
+    this.router.navigateByUrl('meta/registrar')
   }
 }

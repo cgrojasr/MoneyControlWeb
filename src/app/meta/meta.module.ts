@@ -7,9 +7,10 @@ import { MetaComponent } from './meta.component';
 import { MetaRoutingModule } from './meta-routing.module';
 import { MetaPrincipalItemComponent } from './meta-principal-item/meta-principal-item.component';
 import { MetaDetalleComponent } from './meta-detalle/meta-detalle.component';
+import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
-
-
+// Aquí fue injectado FormsModule para utilizar ngModel
 @NgModule({
   declarations: [
     MetaPrincipalComponent,
@@ -21,7 +22,9 @@ import { MetaDetalleComponent } from './meta-detalle/meta-detalle.component';
   ],
   imports: [
     CommonModule,
-    MetaRoutingModule
+    MetaRoutingModule,
+    SharedModule,
+    FormsModule 
   ]
 })
 export class MetaModule { }
