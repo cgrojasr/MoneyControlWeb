@@ -8,10 +8,12 @@
     </div>
     <div class="row mt-2">
         <div class="col-4">
+            <!-- Sacado de bootstrap -->
             <div class="form-floating">
                 <input type="text" class="form-control" id="txtNombreMeta" placeholder="Nombre de la meta" name="nombre" [(ngModel)]="meta.nombre">
                 <label for="txtNombreMeta">Nombre de la meta</label>
             </div>
+            <!-- Sacado de bootstrap -->
         </div>
     </div>
     <div class="row mt-2">
@@ -47,10 +49,10 @@
     </div>
     <div class="row mt-2">
         <div class="col-2">
-            <button class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-primary" (click)="btnGuardar_Click()">Guardar</button>
         </div>
         <div class="col-2">
-            <button class="btn btn-danger">Cancelar</button>
+            <button type="button" class="btn btn-danger" (click)="btnCancelar_Click()">Cancelar</button>
         </div>
     </div>
     {{meta | json}}

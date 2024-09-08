@@ -47,6 +47,7 @@ export class MetaPrincipalComponent implements OnInit {
     this.metaService.listarPorUsuario('').subscribe(
       result => {
         this.metaPrincipalItems = result
+        console.log(result)
       }
     )
   }
