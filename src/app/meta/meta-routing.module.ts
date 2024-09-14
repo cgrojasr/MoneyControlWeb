@@ -21,13 +21,12 @@ const routes: Routes = [
         component: MetaPrincipalComponent
       },
       {
-        path: 'registrar',
+        path: 'registrar/:estado',
         component: MetaRegistrarComponent
-      }
-      ,
+      },
       {
-        path: 'detalle/:id_meta',
-        component: MetaDetalleComponent
+        path: 'detalle/:estado/:id_meta',
+        component: MetaRegistrarComponent
       }
     ]
   }

@@ -9,6 +9,7 @@ import { MetaPrincipalItemComponent } from './meta-principal-item/meta-principal
 import { MetaDetalleComponent } from './meta-detalle/meta-detalle.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { MetaDetalleOperacionComponent } from './meta-detalle-operacion/meta-detalle-operacion.component';
 
 // Aquí fue injectado FormsModule para utilizar ngModel
 @NgModule({
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     MetaEliminarComponent,
     MetaComponent,
     MetaPrincipalItemComponent,
-    MetaDetalleComponent
+    MetaDetalleComponent,
+    MetaDetalleOperacionComponent
   ],
   imports: [
     CommonModule,

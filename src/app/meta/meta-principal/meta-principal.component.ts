@@ -53,6 +53,6 @@ export class MetaPrincipalComponent implements OnInit {
   }
 
   btnRegistrar_OnClick():void{
-    this.router.navigateByUrl('meta/registrar')
+    this.router.navigateByUrl('meta/registrar/0')
   }
 }

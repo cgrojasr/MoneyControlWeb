@@ -21,6 +21,6 @@ export class MetaPrincipalItemComponent {
   }
 
   btnDetalle_click(id_meta: number):void{
-    this.router.navigateByUrl('meta/detalle/'+id_meta)
+    this.router.navigateByUrl('meta/detalle/2/'+id_meta)
   }
 }

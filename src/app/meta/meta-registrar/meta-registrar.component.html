@@ -2,58 +2,81 @@
 <!-- Para capturar los datos del formulario debemos utilizar #form="ngForm" dentro de form -->
 <form #form="ngForm">
     <div class="row mt-2">
-        <div class="col-12">
-            <h3>Registrar Meta</h3>
+        <div class="col-6">
+            <h3>{{titulo}}</h3>
+        </div>
+        <div class="col-3">
+            <button class="btn btn-primary">Modificar</button>
         </div>
     </div>
-    <div class="row mt-2">
-        <div class="col-4">
-            <!-- Sacado de bootstrap -->
-            <div class="form-floating">
-                <input type="text" class="form-control" id="txtNombreMeta" placeholder="Nombre de la meta" name="nombre" [(ngModel)]="meta.nombre">
-                <label for="txtNombreMeta">Nombre de la meta</label>
+    <div class="row">
+        <div class="col-6">
+            <div class="row mt-2">
+                <div class="col-6">
+                    <!-- Sacado de bootstrap -->
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="txtNombreMeta" placeholder="Nombre de la meta"
+                            disabled="{{bloqueado}}" name="nombre" [(ngModel)]="metaModel.nombre">
+                        <label for="txtNombreMeta">Nombre de la meta</label>
+                    </div>
+                    <!-- Sacado de bootstrap -->
+                </div>
             </div>
-            <!-- Sacado de bootstrap -->
+            <div class="row mt-2">
+                <div class="col-3">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="txtMonto" placeholder="Monto de la meta"
+                            disabled="{{bloqueado}}" name="monto" [(ngModel)]="metaModel.monto">
+                        <label for="txtMonto">Monto de la meta</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-3">
+                    <div class="form-floating">
+                        <input type="date" class="form-control" id="txtFechaInicio" placeholder="Fecha Inicio"
+                            disabled="{{bloqueado}}" name="fecha_inicio" [(ngModel)]="metaModel.fecha_inicio">
+                        <label for="txtFechaInicio">Fecha Inicio</label>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-floating">
+                        <input type="date" class="form-control" id="txtFechaFinal" placeholder="Fecha Final"
+                            disabled="{{bloqueado}}" name="fecha_final" [(ngModel)]="metaModel.fecha_final">
+                        <label for="txtFechaFinal">Fecha Final</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2" *ngIf="!bloqueado">
+                <div class="col-8">
+                    <div class="input-group">
+                        <label class="input-group-text" for="inputGroupFile01">Imagen</label>
+                        <!-- [(ngModel)]="meta.url_image" -->
+                        <input type="file" class="form-control" id="inputGroupFile01" (change)="uploadFile($event)">
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row mt-2">
-        <div class="col-4">
-            <div class="form-floating">
-                <input type="number" class="form-control" id="txtMonto" placeholder="Monto de la meta" name="monto" [(ngModel)]="meta.monto">
-                <label for="txtMonto">Monto de la meta</label>
+        <div class="col-6">
+            <div class="row mt-2">
+                <div class="col-6">
+                    <img />
+                </div>
             </div>
         </div>
     </div>
     <div class="row mt-2">
-        <div class="col-2">
-            <div class="form-floating">
-                <input type="date" class="form-control" id="txtFechaInicio" placeholder="Fecha Inicio" name="fecha_inicio" [(ngModel)]="meta.fecha_inicio">
-                <label for="txtFechaInicio">Fecha Inicio</label>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="form-floating">
-                <input type="date" class="form-control" id="txtFechaFinal" placeholder="Fecha Final" name="fecha_final" [(ngModel)]="meta.fecha_final">
-                <label for="txtFechaFinal">Fecha Final</label>
-            </div>
-        </div>
-    </div>
-    <div class="row mt-2">
-        <div class="col-5">
-            <div class="input-group">
-                <label class="input-group-text" for="inputGroupFile01">Imagen</label>
-                <!-- [(ngModel)]="meta.url_image" -->
-                <input type="file" class="form-control" id="inputGroupFile01" (change)="uploadFile($event)">
-              </div>          
-        </div>
-    </div>
-    <div class="row mt-2">
-        <div class="col-2">
+        <div class="col-2" *ngIf="!bloqueado">
             <button type="button" class="btn btn-primary" (click)="btnGuardar_Click()">Guardar</button>
         </div>
         <div class="col-2">
             <button type="button" class="btn btn-danger" (click)="btnCancelar_Click()">Cancelar</button>
         </div>
     </div>
-    {{meta | json}}
+    {{metaModel | json}}
+    <div class="row mt-2" *ngIf="!bloqueado">
+        <div class="col-12">
+            <app-meta-detalle-operacion></app-meta-detalle-operacion>
+        </div>
+    </div>
 </form>
