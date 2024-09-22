@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MetaPrincipalItem } from '../../models/meta-principal-item';
 import { MetaService } from '../../services/meta/meta.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { UsuarioModel } from '../../models/usuario-model';
 
 @Component({
   selector: 'app-meta-principal',
@@ -10,6 +12,11 @@ import { Router } from '@angular/router';
 })
 export class MetaPrincipalComponent implements OnInit {
   metaPrincipalItems: MetaPrincipalItem[] = []
+  usuarioModel: UsuarioModel = {
+    nombre: '',
+    apellido: '',
+    id_usuario: ''
+  }
   // metaPrincipalItems: MetaPrincipalItem[] = [
   //   {
   //     id_meta: 1,
@@ -39,12 +46,16 @@ export class MetaPrincipalComponent implements OnInit {
 
   constructor(
     private router:Router,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private cookieService: CookieService
   ) {
   }
 
   ngOnInit(): void {
-    this.metaService.listarPorUsuario('').subscribe(
+    
+    this.usuarioModel = JSON.parse(this.cookieService.get('usuarioModel')) 
+    console.log(this.cookieService.get('usuarioModel'))
+    this.metaService.listarPorUsuario(this.usuarioModel.id_usuario).subscribe(
       result => {
         this.metaPrincipalItems = result
         console.log(result)

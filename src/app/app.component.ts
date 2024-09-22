@@ -11,7 +11,7 @@ import { json } from 'stream/consumers';
 export class AppComponent implements OnInit {
   title = 'MoneyControlWeb';
   usuarioModel: UsuarioModel = {
-    id_usuario: '21q3sadsad2e',
+    id_usuario: '66d08b8eb71ec84decec19c4',
     nombre: 'Christian',
     apellido: 'Rojas'
   }
