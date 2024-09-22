@@ -4,6 +4,7 @@ import { DatePipe } from '@angular/common';
 import { MetaService } from '../../services/meta/meta.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { UsuarioModel } from '../../models/usuario-model';
 
 
 @Component({
@@ -65,19 +66,22 @@ export class MetaRegistrarComponent implements OnInit {
   }
 
   btnGuardar_Click():void{
-    const usuarioModel = JSON.parse(this.cookieService.get('usuarioModel'))
-    if(this.estado==0){
-      this.metaModel.id_usuario = usuarioModel.id_usuario
-      this.metaService.registrar(this.metaModel).subscribe(
-        result=>{
-          this.metaModel.id_meta = result
-          this.router.navigateByUrl('meta/principal')
-        }
-      )
-    }
+    if(this.cookieService.get('usuarioModel')){
+      const usuarioModel:UsuarioModel = JSON.parse(this.cookieService.get('usuarioModel'))
+      if(this.estado==0){
+        this.metaModel.id_usuario = usuarioModel.id_usuario
+        this.metaService.registrar(this.metaModel).subscribe(
+          result=>{
+            console.log(result)
+            this.metaModel.id_meta = result
+            this.router.navigateByUrl('meta/principal')
+          }
+        )
+      }
 
-    if(this.estado===1){
-      
+      if(this.estado===1){
+        
+      }
     }
   }
 

@@ -26,6 +26,8 @@ export class AppComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.cookieService.set('usuarioModel', JSON.stringify(this.usuarioModel))
+    if(!this.cookieService.get('usuarioModel')){
+      this.cookieService.set('usuarioModel', JSON.stringify(this.usuarioModel))
+    } 
   }
 }
