@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     if(!this.cookieService.get('usuarioModel')){
       this.cookieService.set('usuarioModel', JSON.stringify(this.usuarioModel))
+      this.cookieService.set('token', 'eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiR2VuYXJvIFJvamFzIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoicGNpc2Nyb2pAdXBjLmVkdS5wZSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3NpZCI6IjY2Y2ZhYjYyODFmOGQxMjcxYmI5MDI2MyIsImV4cCI6MTcyODEzMjg0NX0.9h3nsnGhxA8bpQkiY9BorAjq-S7t0wt09wFTs6jMWs8')
     } 
   }
 }

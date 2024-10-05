@@ -10,6 +10,8 @@ import { MetaDetalleComponent } from './meta-detalle/meta-detalle.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { MetaDetalleOperacionComponent } from './meta-detalle-operacion/meta-detalle-operacion.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from '../services/AuthInterceptor';
 
 // Aquí fue injectado FormsModule para utilizar ngModel
 @NgModule({
@@ -26,7 +28,9 @@ import { MetaDetalleOperacionComponent } from './meta-detalle-operacion/meta-det
     CommonModule,
     MetaRoutingModule,
     SharedModule,
-    FormsModule 
+    FormsModule
+  ],
+  providers: [
   ]
 })
 export class MetaModule { }

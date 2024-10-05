@@ -54,7 +54,7 @@ export class MetaService {
   ) { }
 
   listarPorUsuario(id_usuario:string):Observable<MetaPrincipalItem[]>{
-    return this.httpClient.get<MetaPrincipalItem[]>(`http://localhost:5254/api/meta/ListarPorUsuario?id_usuario=${id_usuario}`)
+    return this.httpClient.get<MetaPrincipalItem[]>(`http://localhost:5053/api/meta/ListarPorUsuario?id_usuario=${id_usuario}`)
     //return of(this.metaPrincipalItems)
   }
 
@@ -70,11 +70,11 @@ export class MetaService {
     // this.metaPrincipalItems.push(metaPrincipalItem)
     // console.log(this.metaPrincipalItems)
     //return of(metaPrincipalItem.id_meta)
-    return this.httpClient.post<number>(`http://localhost:5254/api/meta`, metaModel)
+    return this.httpClient.post<number>(`http://localhost:5053/api/meta`, metaModel)
   }
 
   buscarPorId(id_meta:number):Observable<MetaModel>{
     // return of(this.metaModel)
-    return this.httpClient.get<MetaModel>(`http://localhost:5254/api/meta?id_meta=${id_meta}`)
+    return this.httpClient.get<MetaModel>(`http://localhost:5053/api/meta?id_meta=${id_meta}`)
   }
 }
