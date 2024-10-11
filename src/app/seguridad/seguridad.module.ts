@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SeguridadComponent } from './seguridad.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrarComponent } from './registrar/registrar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { RegistrarComponent } from './registrar/registrar.component';
     RegistrarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class SeguridadModule { }
