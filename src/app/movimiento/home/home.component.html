@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col-11 mt-2">
+        <h1>Resumen de movimientos</h1>
+    </div>
+    <div class="col-1 mt-2">
+        <button type="button" class="btn btn-success" routerLink="../../movimiento/movimiento-detalle">Detalle</button>
+    </div>
+</div>
+<!-- <div class="row mt-2">
+    <div class="col-12">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark" style="background-color: green">
+                    <tr>
+                        <th scope="col" class="col-2">Categoría</th>
+                        <th scope="col" class="col-2">Sep-24</th>
+                        <th scope="col" class="col-2">Oct-24</th>
+                        <th scope="col" class="col-2">Nov-24</th>
+                        <th scope="col" class="col-2">Dic-24</th>
+                        <th scope="col" class="col-2">Ene-25</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                  <tr>
+                    <th scope="row">Ingreso</th>
+                    <td>S/ 1000.00</td>
+                    <td>S/ 1200.00</td>
+                    <td>S/ 800.00</td>
+                    <td>S/ 1100.00</td>
+                    <td>S/ 1200.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Egresos</th>
+                    <td>S/ 1100.00</td>
+                    <td>S/ 800.00</td>
+                    <td>S/ 1100.00</td>
+                    <td>S/ 1300.00</td>
+                    <td>S/ 1200.00</td>
+                  </tr>
+                </tbody>
+                <tfoot class="table-dark">
+                    <tr>
+                        <th scope="row">Total</th>
+                        <td>S/ -100.00</td>
+                        <td>S/ 400.00</td>
+                        <td>S/ -300.00</td>
+                        <td>S/ -200.00</td>
+                        <td>S/ 0.00</td>
+                    </tr>
+                </tfoot>
+              </table>
+        </div>
+    </div>
+</div> -->
+<div class="row">
+    <div class="col-12">
+        <ngx-charts-bar-vertical-2d
+        [results]="multi"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [legendTitle]="legendTitle">
+    </ngx-charts-bar-vertical-2d>
+        <!-- (select)="onSelect($event)"
+        (activate)="onActivate($event)"
+        (deactivate)="onDeactivate($event)">
+    </ngx-charts-bar-vertical-2d> -->
+    </div>
+</div>

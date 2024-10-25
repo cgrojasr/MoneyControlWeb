@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioAutenticar } from '../../models/usuario-autenticar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,14 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit {
-  username: string = '';
-  password: string = '';
-  constructor() { }
+  usuario_autenticar: UsuarioAutenticar = {
+    usuario: '',
+    password: ''
+  }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit() {
-    console.log('Formulario enviado');
+  btnLoginClick() {
+    this.router.navigateByUrl('movimiento');
+  }
+
+  btnRegistrarClick() {
+    this.router.navigateByUrl('seguridad/registrar');
+  }
+
+  btnRecuperarClick() {
+    console.log('Recuperar contraseña');
   }
 }
