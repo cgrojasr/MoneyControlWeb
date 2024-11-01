@@ -4,16 +4,20 @@ import { SeguridadComponent } from './seguridad.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { FormsModule } from '@angular/forms';
+import { SeguridadRoutingModule } from './seguridad-routing.module';
+import { RecuperarComponent } from './recuperar/recuperar.component';
 
 @NgModule({
   declarations: [
     SeguridadComponent,
     LoginComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    RecuperarComponent
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    SeguridadRoutingModule
   ]
 })
 export class SeguridadModule { }
