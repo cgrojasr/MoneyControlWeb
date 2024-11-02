@@ -9,6 +9,8 @@ import { MovimientoRegistrarComponent } from './movimiento-registrar/movimiento-
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MovimientoDetalleTablaComponent } from './movimiento-detalle-tabla/movimiento-detalle-tabla.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,12 +19,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MovimientoComponent,
     HomeComponent,
     MovimientoDetalleComponent,
-    MovimientoRegistrarComponent
+    MovimientoRegistrarComponent,
+    MovimientoDetalleTablaComponent
   ],
   imports: [
     MovimientoRoutingModule,
     SharedModule,
-    NgxChartsModule
+    NgxChartsModule,
+    FormsModule
   ]
 })
 

@@ -1,0 +1,18 @@
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+      <thead class="table-dark" style="background-color: green">
+          <tr>
+              <th scope="col" class="col-2">Fecha</th>
+              <th scope="col" class="col-7">Descripción</th>
+              <th scope="col" class="col-3">Monto</th>
+          </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let movimiento of movimientos">
+          <td>{{movimiento.fecha}}</td>
+          <td>{{movimiento.descripcion}}</td>
+          <td>S/ {{movimiento.monto}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
